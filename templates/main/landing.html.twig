@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FoodCalculator - service for your better body{% endblock %}
+
+{% block body %}
+
+    {# Main content of the page #}
+
+    <div class="container-fluid">
+
+        <div class="row align-items-center p-3 bg-light">
+            <div class="col-1">
+                <img
+                    src="/img/logo_food.png"
+                    alt="logo"
+                    height="50">
+            </div>
+            <div class="col-8">
+                <span class="h2">Food Calculator - build yourself!</span>
+            </div>
+            <div class="col-3 text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-12 g-0">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://i.pinimg.com/originals/1c/8f/b9/1c8fb9c69514307d630bf686557b2642.jpg" class="d-block w-100" height="500" alt="backgr">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Calculate nutritions</h5>
+                                <p>It's your way to healthy life</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-center p-3">
+            <div class="col-6 text-center">
+                Landing page coming soon...
+            </div>
+        </div>
+
+    </div>
+
+    {# Modals #}
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="post" action="/login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="post" action="/register">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputRepeatPassword" class="form-label">Repeat Password</label>
+                            <input type="password" class="form-control" id="inputRepeatPassword" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
