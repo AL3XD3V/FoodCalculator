@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FoodCalculator - service for your better body{% endblock %}
+{% block title %}FoodCalculator - построй свою форму!{% endblock %}
 
 {% block body %}
 
@@ -16,11 +16,11 @@
                     height="50">
             </div>
             <div class="col-8">
-                <span class="h2">Food Calculator - build yourself!</span>
+                <span class="h2">Food Calculator - построй свою форму!</span>
             </div>
             <div class="col-3 text-end">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
             </div>
         </div>
 
@@ -31,8 +31,8 @@
                         <div class="carousel-item active">
                             <img src="https://i.pinimg.com/originals/1c/8f/b9/1c8fb9c69514307d630bf686557b2642.jpg" class="d-block w-100" height="500" alt="backgr">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Calculate nutritions</h5>
-                                <p>It's your way to healthy life</p>
+                                <h5>Расчет рациона питания</h5>
+                                <p>Это твой путь к лучшей жизни!</p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
 
         <div class="row align-items-center justify-content-center p-3">
             <div class="col-6 text-center">
-                Landing page coming soon...
+                Landing page скоро будет...
             </div>
         </div>
 
@@ -55,21 +55,21 @@
             <form method="post" action="/login">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        <h5 class="modal-title" id="loginModalLabel">Вход</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email address</label>
+                            <label for="inputEmail" class="form-label">Электронная почта</label>
                             <input type="email" class="form-control" id="inputEmail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputPassword" class="form-label">Password</label>
+                            <label for="inputPassword" class="form-label">Пароль</label>
                             <input type="password" class="form-control" id="inputPassword" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Войти</button>
                     </div>
                 </div>
             </form>
@@ -81,29 +81,29 @@
             <form method="post" action="/register">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                        <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="inputName" class="form-label">Name</label>
+                            <label for="inputName" class="form-label">Имя</label>
                             <input type="text" class="form-control" id="inputName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email address</label>
+                            <label for="inputEmail" class="form-label">Электронная почта</label>
                             <input type="email" class="form-control" id="inputEmail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputPassword" class="form-label">Password</label>
+                            <label for="inputPassword" class="form-label">Пароль</label>
                             <input type="password" class="form-control" id="inputPassword" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputRepeatPassword" class="form-label">Repeat Password</label>
+                            <label for="inputRepeatPassword" class="form-label">Повторите пароль</label>
                             <input type="password" class="form-control" id="inputRepeatPassword" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </div>
                 </div>
             </form>
