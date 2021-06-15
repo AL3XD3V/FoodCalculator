@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FoodCalculator - форма регистрации{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <div class="row align-items-center p-3 bg-light">
+            <div class="col-1">
+                <a href="/"><img
+                    src="/img/logo_food.png"
+                    alt="logo"
+                    height="50"></a>
+            </div>
+            <div class="col-8">
+                <span class="h2">Food Calculator - построй свою форму!</span>
+            </div>
+            <div class="col-3 text-end">
+            </div>
+        </div>
+
+        <div class="row justify-content-center p-5">
+            <div class="col-auto col-lg-3">
+                <form method="post" action="/register">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">Регистрация</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="inputName" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="inputName" name="_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputEmail" class="form-label">Электронная почта</label>
+                                <input type="email" class="form-control" id="inputEmail" name="_username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword" class="form-label">Пароль</label>
+                                <input type="password" class="form-control" id="inputPassword" name="_password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputRepeatPassword" class="form-label">Повторите пароль</label>
+                                <input type="password" class="form-control" id="inputRepeatPassword" name="_repeatPassword" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="_target_path" value="/profile"/>
+                            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                        </div>
+                    </div>
+                </form>
+                {% if error %}
+                    <div class="alert alert-danger mt-3">
+                        {{ error }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock %}

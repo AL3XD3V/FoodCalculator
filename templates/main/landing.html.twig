@@ -10,17 +10,22 @@
 
         <div class="row align-items-center p-3 bg-light">
             <div class="col-1">
-                <img
+                <a href="/"><img
                     src="/img/logo_food.png"
                     alt="logo"
-                    height="50">
+                    height="50"></a>
             </div>
             <div class="col-8">
                 <span class="h2">Food Calculator - построй свою форму!</span>
             </div>
             <div class="col-3 text-end">
+                {% if app.user %}
+                <span class="p-3"><b>{{ app.user.name }}</b></span>
+                <a href="/logout"><button type="button" class="btn btn-primary">Выход</button></a>
+                {% else %}
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+                {% endif %}
             </div>
         </div>
 
@@ -29,7 +34,7 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://i.pinimg.com/originals/1c/8f/b9/1c8fb9c69514307d630bf686557b2642.jpg" class="d-block w-100" height="500" alt="backgr">
+                            <img src="https://i.pinimg.com/originals/1c/8f/b9/1c8fb9c69514307d630bf686557b2642.jpg" class="d-block w-100" height="750" alt="backgr">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Расчет рациона питания</h5>
                                 <p>Это твой путь к лучшей жизни!</p>
@@ -61,14 +66,16 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Электронная почта</label>
-                            <input type="email" class="form-control" id="inputEmail" required>
+                            <input type="email" class="form-control" id="inputEmail" name="_username" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="inputPassword" required>
+                            <input type="password" class="form-control" id="inputPassword" name="_password" required>
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <input type="hidden" name="_target_path" value="/profile"/>
                         <button type="submit" class="btn btn-primary">Войти</button>
                     </div>
                 </div>
@@ -87,19 +94,19 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="inputName" class="form-label">Имя</label>
-                            <input type="text" class="form-control" id="inputName" required>
+                            <input type="text" class="form-control" id="inputName" name="_name" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Электронная почта</label>
-                            <input type="email" class="form-control" id="inputEmail" required>
+                            <input type="email" class="form-control" id="inputEmail" name="_username" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="inputPassword" required>
+                            <input type="password" class="form-control" id="inputPassword" name="_password" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputRepeatPassword" class="form-label">Повторите пароль</label>
-                            <input type="password" class="form-control" id="inputRepeatPassword" required>
+                            <input type="password" class="form-control" id="inputRepeatPassword" name="_repeatPassword" required>
                         </div>
                     </div>
                     <div class="modal-footer">
